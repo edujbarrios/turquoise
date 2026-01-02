@@ -1,4 +1,4 @@
-# Turquoise - Quarto Dark Theme
+# Turquoise Theme for Quarto
 
 A professional turquoise dark them dark theme for Quarto inspired by the personal branding colors of [edujbarrios](https://github.com/edujbarrios).
 
@@ -33,6 +33,7 @@ If you find this theme useful in your work, please consider citing it as:
 Barrios, Edaurdo J. (2026). Turquoise - A Dark Theme for Quarto.
 GitHub: https://github.com/edujbarrios/turquoise
 ```
+
 
 
 
