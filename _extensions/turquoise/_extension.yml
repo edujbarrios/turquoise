@@ -1,0 +1,12 @@
+title: Turquoise
+author: Eduardo J. Barrios
+version: 1.0.0
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    html:
+      theme: turquoise.scss
+      css: turquoise.css
+      toc: true
+      code-copy: true
+      code-overflow: wrap

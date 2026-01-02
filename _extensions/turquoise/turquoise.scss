@@ -1,0 +1,421 @@
+/*-- scss:defaults --*/
+
+// Color palette inspired by Docusaurus dark mode
+$body-bg: #1b1b1d;
+$body-color: #e6e6e6;
+
+// Turquoise accent colors
+$primary: #40E0D0;
+$primary-light: #66E6DD;
+$primary-lighter: #8CF0EB;
+$primary-soft: #7dd3c7;
+
+// Dark shades
+$dark-bg: #111213;
+$darker-bg: #0d0d0e;
+$gray-900: #e6e6e6;
+$gray-800: #c4c4c4;
+$gray-700: #9b9b9b;
+$gray-600: #6e6e6e;
+$gray-500: #4a4a4a;
+
+// Links
+$link-color: $primary;
+$link-hover-color: $primary-light;
+
+// Code
+$code-bg: $dark-bg;
+$code-color: $primary-soft;
+
+// Inline code (pill style)
+$inline-code-bg: $dark-bg;
+$inline-code-color: $primary-soft;
+
+// Headings
+$headings-color: $gray-900;
+
+// Borders
+$border-color: rgba(64, 224, 208, 0.1);
+
+// Tables
+$table-bg: transparent;
+$table-border-color: rgba(64, 224, 208, 0.15);
+$table-hover-bg: rgba(64, 224, 208, 0.05);
+
+/*-- scss:rules --*/
+
+// Base styles
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  color: $headings-color;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid rgba(64, 224, 208, 0.2);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.15);
+  padding-bottom: 0.3em;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+  
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Inline code - DARK PILL STYLE
+code:not(pre > code) {
+  background-color: $inline-code-bg !important;
+  color: $inline-code-color !important;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  border: 1px solid rgba(64, 224, 208, 0.25);
+  font-weight: 500;
+}
+
+// Code blocks - Noticeably lighter background for clear differentiation
+div.sourceCode {
+  background-color: #2d2d35 !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 1em !important;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+pre {
+  background-color: #2d2d35 !important;
+  border: none !important;
+  padding: 1em;
+  border-radius: 8px;
+  margin: 0;
+  
+  code {
+    background-color: transparent !important;
+    color: $body-color;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+// Syntax highlighting - Calm colors
+.sourceCode {
+  .kw { color: $primary-soft; font-weight: 500; } // Keywords
+  .dt { color: $primary-soft; } // Data types
+  .dv, .bn, .fl { color: $primary-lighter; } // Numbers
+  .ch, .st { color: $primary-lighter; } // Strings
+  .co { color: #ffdd44; font-style: italic; font-weight: 500; } // Comments
+  .ot { color: $primary; } // Other
+  .fu { color: $primary-soft; } // Functions
+  .op { color: $gray-700; } // Operators
+  .cf { color: $primary; font-weight: 500; } // Control flow
+  .cn { color: $primary-lighter; } // Constants
+  .sc { color: $primary-lighter; } // Special char
+  .vs { color: $primary-lighter; } // Verbatim string
+  .ss { color: $primary-lighter; } // Special string
+  .im { color: $primary; } // Import
+  .va { color: $body-color; } // Variables
+  .bu { color: $primary-soft; } // Built-in
+  .pp { color: $primary; } // Preprocessor
+  .at { color: $primary; } // Attribute
+  .do { color: #ffdd44; font-style: italic; font-weight: 500; } // Documentation
+  .an { color: #ffdd44; font-style: italic; font-weight: 500; } // Annotation
+  .cv { color: #ffdd44; font-style: italic; font-weight: 500; } // Comment var
+  .in { color: #ffdd44; font-style: italic; font-weight: 500; } // Information
+}
+
+// Tables - Docusaurus style
+table {
+  width: 100%;
+  margin: 1.5em 0;
+  background-color: #232326;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(64, 224, 208, 0.25);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  
+  thead {
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    th {
+      padding: 0.75rem 1rem;
+      color: $headings-color;
+      font-weight: 600;
+      border-bottom: 2px solid $table-border-color;
+      text-align: left;
+    }
+  }
+  
+  tbody {
+    tr {
+      transition: background-color 0.2s ease;
+      
+      &:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+      
+      &:hover {
+        background-color: rgba(64, 224, 208, 0.08);
+      }
+      
+      td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid $table-border-color;
+      }
+      
+      &:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Blockquotes - Turquoise accent
+blockquote {
+  border-left: 5px solid $primary;
+  background-color: rgba(64, 224, 208, 0.08);
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  
+  p {
+    margin: 0.5em 0;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Bold and italic text - turquoise accent
+strong, b {
+  color: $primary;
+  font-weight: 600;
+}
+
+em, i {
+  color: $primary;
+  font-style: italic;
+}
+
+// Lists
+ul, ol {
+  padding-left: 2em;
+  
+  li {
+    margin: 0.5em 0;
+  }
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  border-top: 1px solid $border-color;
+  margin: 2em 0;
+}
+
+// Main content area
+#quarto-content {
+  background-color: $body-bg;
+}
+
+// Sidebar and TOC
+.sidebar, #TOC {
+  background-color: $body-bg;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid $border-color;
+  
+  nav ul {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      margin: 0.3em 0;
+      
+      a {
+        color: $gray-800;
+        font-weight: normal;
+        padding: 0.3em 0.5em;
+        display: block;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: rgba(64, 224, 208, 0.1);
+          color: $primary;
+          text-decoration: none;
+        }
+        
+        &.active {
+          background-color: rgba(64, 224, 208, 0.15);
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+    }
+    
+    // Nested items
+    ul {
+      padding-left: 1em;
+      margin-top: 0.3em;
+    }
+  }
+}
+
+// TOC title
+#toc-title {
+  color: $headings-color;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+// Navbar (if present)
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid $border-color;
+  
+  .navbar-brand {
+    color: $primary;
+    font-weight: 600;
+  }
+  
+  .nav-link {
+    color: $gray-800;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid $border-color;
+  color: $gray-700;
+  padding: 2em 0;
+  margin-top: 3em;
+}
+
+// Code copy button
+.code-copy-button {
+  background-color: rgba(64, 224, 208, 0.1);
+  color: $primary;
+  border: 1px solid rgba(64, 224, 208, 0.2);
+  
+  &:hover {
+    background-color: rgba(64, 224, 208, 0.2);
+  }
+}
+
+// Callout blocks
+.callout {
+  border-left: 4px solid $primary;
+  background-color: rgba(64, 224, 208, 0.08);
+  border-radius: 8px;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border: 1px solid rgba(64, 224, 208, 0.2);
+  border-left-width: 4px;
+  
+  .callout-header {
+    color: $primary;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+  
+  .callout-icon {
+    color: $primary;
+  }
+  
+  .callout-body {
+    color: #f0f0f0;
+  }
+  
+  p {
+    color: #f0f0f0;
+  }
+  
+  &.callout-note {
+    border-left-color: $primary;
+    background-color: rgba(64, 224, 208, 0.08);
+    border-color: rgba(64, 224, 208, 0.2);
+    
+    .callout-header, .callout-icon {
+      color: $primary;
+    }
+  }
+  
+  &.callout-warning {
+    border-left-color: #ffb86c;
+    background-color: rgba(255, 184, 108, 0.08);
+    border-color: rgba(255, 184, 108, 0.2);
+    
+    .callout-header, .callout-icon {
+      color: #ffb86c;
+    }
+  }
+  
+  &.callout-important {
+    border-left-color: #ff5555;
+    background-color: rgba(255, 85, 85, 0.08);
+    border-color: rgba(255, 85, 85, 0.2);
+    
+    .callout-header, .callout-icon {
+      color: #ff5555;
+    }
+  }
+  
+  &.callout-tip {
+    border-left-color: #50fa7b;
+    background-color: rgba(80, 250, 123, 0.08);
+    border-color: rgba(80, 250, 123, 0.2);
+    
+    .callout-header, .callout-icon {
+      color: #50fa7b;
+    }
+  }
+  
+  &.callout-caution {
+    border-left-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.08);
+    border-color: rgba(255, 107, 107, 0.2);
+    
+    .callout-header, .callout-icon {
+      color: #ff6b6b;
+    }
+  }
+}
