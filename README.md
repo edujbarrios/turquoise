@@ -29,9 +29,10 @@ format:
 ## Citation
 
 If you find this theme useful in your work, please consider citing it as:
-
+```txt
 **Barrios, Edaurdo J. (2026). Turquoise - A Dark Theme for Quarto.**  
 GitHub: https://github.com/edujbarrios/turquoise
+```
 
 
 
