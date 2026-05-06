@@ -10,7 +10,7 @@ $primary-light: #66E6DD;
 $primary-lighter: #8CF0EB;
 $primary-soft: #7dd3c7;
 
-// Dark shades
+// Dark shades (note: gray scale is inverted from Bootstrap convention — 900 is lightest)
 $dark-bg: #111213;
 $darker-bg: #0d0d0e;
 $gray-900: #e6e6e6;
@@ -41,6 +41,36 @@ $border-color: rgba(64, 224, 208, 0.1);
 $table-bg: transparent;
 $table-border-color: rgba(64, 224, 208, 0.15);
 $table-hover-bg: rgba(64, 224, 208, 0.05);
+
+// Quarto navbar variables
+$navbar-bg: $dark-bg;
+$navbar-fg: $gray-900;
+$navbar-hl: $primary;
+
+// Quarto sidebar variables
+$sidebar-bg: $body-bg;
+$sidebar-fg: $gray-800;
+$sidebar-hl: $primary;
+
+// Quarto footer variables
+$footer-bg: $dark-bg;
+$footer-fg: $gray-700;
+
+// Quarto code block variables
+$code-block-bg: #2d2d35;
+$code-block-border: rgba(64, 224, 208, 0.15);
+
+// Quarto callout accent colors
+$callout-color-note: $primary;
+$callout-color-tip: #50fa7b;
+$callout-color-caution: #ff6b6b;
+$callout-color-warning: #ffb86c;
+$callout-color-important: #ff5555;
+
+// Quarto TOC variables
+$toc-color: $gray-800;
+$toc-active-border: $primary;
+$toc-inactive-border: $gray-600;
 
 /*-- scss:rules --*/
 
@@ -341,25 +371,12 @@ hr {
   }
 }
 
-// Callout blocks
+// Callout blocks — base structure only; per-type colors and borders are
+// defined via $callout-color-* SCSS variables above and the CSS overrides
+// in turquoise.css for full Quarto HTML compatibility.
 .callout {
-  border-left: 4px solid $primary;
-  background-color: rgba(64, 224, 208, 0.08);
   border-radius: 8px;
-  padding: 1em 1.5em;
   margin: 1.5em 0;
-  border: 1px solid rgba(64, 224, 208, 0.2);
-  border-left-width: 4px;
-  
-  .callout-header {
-    color: $primary;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-  }
-  
-  .callout-icon {
-    color: $primary;
-  }
   
   .callout-body {
     color: #f0f0f0;
@@ -367,55 +384,5 @@ hr {
   
   p {
     color: #f0f0f0;
-  }
-  
-  &.callout-note {
-    border-left-color: $primary;
-    background-color: rgba(64, 224, 208, 0.08);
-    border-color: rgba(64, 224, 208, 0.2);
-    
-    .callout-header, .callout-icon {
-      color: $primary;
-    }
-  }
-  
-  &.callout-warning {
-    border-left-color: #ffb86c;
-    background-color: rgba(255, 184, 108, 0.08);
-    border-color: rgba(255, 184, 108, 0.2);
-    
-    .callout-header, .callout-icon {
-      color: #ffb86c;
-    }
-  }
-  
-  &.callout-important {
-    border-left-color: #ff5555;
-    background-color: rgba(255, 85, 85, 0.08);
-    border-color: rgba(255, 85, 85, 0.2);
-    
-    .callout-header, .callout-icon {
-      color: #ff5555;
-    }
-  }
-  
-  &.callout-tip {
-    border-left-color: #50fa7b;
-    background-color: rgba(80, 250, 123, 0.08);
-    border-color: rgba(80, 250, 123, 0.2);
-    
-    .callout-header, .callout-icon {
-      color: #50fa7b;
-    }
-  }
-  
-  &.callout-caution {
-    border-left-color: #ff6b6b;
-    background-color: rgba(255, 107, 107, 0.08);
-    border-color: rgba(255, 107, 107, 0.2);
-    
-    .callout-header, .callout-icon {
-      color: #ff6b6b;
-    }
   }
 }

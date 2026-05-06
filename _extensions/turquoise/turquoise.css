@@ -22,6 +22,73 @@ body {
   margin-bottom: 2em;
 }
 
+/* Title metadata (author, date, etc.) */
+.quarto-title-meta-heading {
+  color: #9b9b9b;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quarto-title-meta-contents {
+  color: #c4c4c4;
+}
+
+/* Main Quarto layout containers */
+#quarto-content {
+  background-color: #1b1b1d;
+}
+
+#quarto-document-content {
+  background-color: #1b1b1d;
+}
+
+/* Quarto sidebar */
+#quarto-sidebar {
+  background-color: #1b1b1d;
+  border-right: 1px solid rgba(64, 224, 208, 0.1);
+}
+
+#quarto-margin-sidebar {
+  background-color: #1b1b1d;
+}
+
+/* Sidebar navigation items */
+.sidebar-navigation {
+  background-color: #1b1b1d;
+}
+
+.sidebar-item-container .sidebar-item {
+  color: #c4c4c4;
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item-container .sidebar-item:hover {
+  background-color: rgba(64, 224, 208, 0.1);
+  color: #40E0D0;
+}
+
+.sidebar-item-container .sidebar-item.active {
+  background-color: rgba(64, 224, 208, 0.15);
+  color: #40E0D0;
+  font-weight: 600;
+  border-left: 3px solid #40E0D0;
+  padding-left: calc(0.5em - 3px);
+}
+
+/* Mobile secondary nav */
+.quarto-secondary-nav {
+  background-color: #111213;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+  color: #e6e6e6;
+}
+
+.quarto-secondary-nav-title {
+  color: #e6e6e6;
+}
+
 /* Enhanced TOC styling */
 #TOC {
   background-color: #1b1b1d;
@@ -101,13 +168,25 @@ kbd {
   color: #7dd3c7;
 }
 
-/* Callout blocks */
+/* Callout blocks — targeting Quarto's generated HTML structure */
 .callout {
   background-color: rgba(64, 224, 208, 0.08) !important;
   border-left: 4px solid #40E0D0 !important;
   border-radius: 8px !important;
   border: 1px solid rgba(64, 224, 208, 0.2) !important;
   border-left-width: 4px !important;
+}
+
+.callout .callout-header,
+.callout .callout-title-container {
+  color: #40E0D0;
+  font-weight: 600;
+}
+
+.callout .callout-body,
+.callout .callout-body-container,
+.callout .callout-body p {
+  color: #f0f0f0 !important;
 }
 
 .callout.callout-note {
@@ -117,9 +196,21 @@ kbd {
 }
 
 .callout.callout-note .callout-header,
-.callout.callout-note .callout-icon,
-.callout.callout-note .callout-title {
+.callout.callout-note .callout-title-container,
+.callout.callout-note .callout-icon {
   color: #40E0D0 !important;
+}
+
+.callout.callout-tip {
+  background-color: rgba(80, 250, 123, 0.08) !important;
+  border-left-color: #50fa7b !important;
+  border-color: rgba(80, 250, 123, 0.2) !important;
+}
+
+.callout.callout-tip .callout-header,
+.callout.callout-tip .callout-title-container,
+.callout.callout-tip .callout-icon {
+  color: #50fa7b !important;
 }
 
 .callout.callout-warning {
@@ -129,8 +220,8 @@ kbd {
 }
 
 .callout.callout-warning .callout-header,
-.callout.callout-warning .callout-icon,
-.callout.callout-warning .callout-title {
+.callout.callout-warning .callout-title-container,
+.callout.callout-warning .callout-icon {
   color: #ffb86c !important;
 }
 
@@ -141,34 +232,21 @@ kbd {
 }
 
 .callout.callout-important .callout-header,
-.callout.callout-important .callout-icon,
-.callout.callout-important .callout-title {
+.callout.callout-important .callout-title-container,
+.callout.callout-important .callout-icon {
   color: #ff5555 !important;
 }
 
-.callout.callout-tip {
-  background-color: rgba(80, 250, 123, 0.08) !important;
-  border-left-color: #50fa7b !important;
-  border-color: rgba(80, 250, 123, 0.2) !important;
+.callout.callout-caution {
+  background-color: rgba(255, 107, 107, 0.08) !important;
+  border-left-color: #ff6b6b !important;
+  border-color: rgba(255, 107, 107, 0.2) !important;
 }
 
-.callout.callout-tip .callout-header,
-.callout.callout-tip .callout-icon,
-.callout.callout-tip .callout-title {
-  color: #50fa7b !important;
-}
-
-.callout-body {
-  color: #f0f0f0 !important;
-}
-
-.callout-body p {
-  color: #f0f0f0 !important;
-}
-
-.callout-header {
-  font-weight: 600 !important;
-  margin-bottom: 0.5em !important;
+.callout.callout-caution .callout-header,
+.callout.callout-caution .callout-title-container,
+.callout.callout-caution .callout-icon {
+  color: #ff6b6b !important;
 }
 
 /* Highlighted code lines in code blocks */
