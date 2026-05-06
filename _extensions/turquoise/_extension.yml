@@ -7,6 +7,7 @@ contributes:
     turquoise-html:
       theme: turquoise.scss
       css: turquoise.css
+      highlight-style: zenburn
       toc: true
       code-copy: true
       code-overflow: wrap
