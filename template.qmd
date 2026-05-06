@@ -1,0 +1,82 @@
+---
+title: "Turquoise Theme Demo"
+subtitle: "A professional dark theme for Quarto"
+author: "Eduardo J. Barrios"
+date: today
+format:
+  turquoise-html:
+    toc: true
+    toc-location: left
+---
+
+## Introduction
+
+This is a demonstration of the **Turquoise** theme for Quarto. The theme uses a dark background with turquoise accents, inspired by Docusaurus dark mode.
+
+## Text Formatting
+
+You can use *italic*, **bold**, and `inline code` throughout your document.
+
+> Blockquotes are styled with a turquoise left border and a subtle background.
+
+## Code Blocks
+
+```python
+def greet(name: str) -> str:
+    """Return a greeting message."""
+    return f"Hello, {name}!"
+
+print(greet("World"))
+```
+
+```r
+# R example
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "#40E0D0") +
+  theme_minimal()
+```
+
+## Tables
+
+| Feature       | Status  |
+|---------------|---------|
+| Dark mode     | ✅       |
+| Turquoise TOC | ✅       |
+| Code copy     | ✅       |
+| Callout boxes | ✅       |
+
+## Callouts
+
+::: {.callout-note}
+This is a **note** callout.
+:::
+
+::: {.callout-tip}
+This is a **tip** callout.
+:::
+
+::: {.callout-warning}
+This is a **warning** callout.
+:::
+
+::: {.callout-important}
+This is an **important** callout.
+:::
+
+::: {.callout-caution}
+This is a **caution** callout.
+:::
+
+## Lists
+
+- Item one
+- Item two
+  - Nested item
+  - Another nested item
+- Item three
+
+1. First step
+2. Second step
+3. Third step
